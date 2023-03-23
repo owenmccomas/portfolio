@@ -1,0 +1,46 @@
+#root {
+  font-family: 'Quicksand', sans-serif;  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  /* text-align: center; */
+}
+
+.name {
+  font-weight: 100;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bodyLink {
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.bodyLink:hover {
+  color: #888;
+}
+
+.navLink {
+  margin-right: 3rem;
+  text-decoration: none;
+  color: black;
+}
+.navLink:hover {
+  color: #888;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
