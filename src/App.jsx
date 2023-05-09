@@ -1,30 +1,39 @@
-import './App.css'
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Projects from "./components/Projects";
+import Home from "./components/Home";
+import MorseConverter from "./components/MorseConverter";
+
 
 function App() {
-
   return (
-    <div className="App">
-      <nav>
-        <a className='navLink' href='#'>projects</a>
-        <a className='navLink' href='#'>contact</a>
-        <a className='navLink' href='#'>about</a>
-      </nav>
-      <div className='main'>
-        <h1 className='name'>Owen McComas</h1>
+    <Router>
+      <div className="App">
+        <nav>
+          <Link className="navLink" to="/">
+            home
+          </Link>
+          <Link className="navLink" to="/Projects">
+            projects
+          </Link>
+          <Link className="navLink" to="#">
+            contact
+          </Link>
+          <Link className="navLink" to="#">
+            about
+          </Link>
+        </nav>
       </div>
-      <hr/>
-      <div className='body'>
-        <p className='bodyContent'>github</p><a className='bodyLink' href='https://github.com/owenmccomas'>owenmccomas</a><p>-</p>
-        <p className='bodyContent'>linkedin</p><a className='bodyLink' href='https://www.linkedin.com/in/owenmccomas/'>owenmccomas</a><p>-</p>
-        <p className='bodyContent'>onlyfans</p><a className='bodyLink' href='https://youtu.be/dQw4w9WgXcQ'>daddymachine</a>
-        <br/><br/>
-      </div>
-      <hr/>
-      <footer className='footer'>
-      &#169;2023 owen mccomas
-      </footer>
-    </div>
-  )
+      <Routes>
+        <Route path="/projects" element={<Projects />}>
+          <Route path="morse-converter" element={<MorseConverter />} />
+        </Route>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <footer className="footer">&#169;2023 owen mccomas</footer>
+    </Router>
+  );
 }
 
-export default App
+export default App;
